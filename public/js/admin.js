@@ -18,6 +18,9 @@ function setupForm() {
 async function handleSubmit(e) {
     e.preventDefault();
     
+    alert('⚠️ 정적 사이트에서는 글 작성/수정이 불가능합니다.\n\n글을 추가하려면:\n1. 로컬에서 posts/ 디렉토리에 Markdown 파일을 작성\n2. npm run build 실행\n3. GitHub에 커밋 및 푸시\n4. Cloudflare Pages가 자동으로 재배포');
+    return;
+    
     const title = document.getElementById('postTitle').value.trim();
     const content = document.getElementById('postContent').value.trim();
     
@@ -114,6 +117,9 @@ async function editPost(id) {
 
 // 글 삭제
 async function deletePost(id) {
+    alert('⚠️ 정적 사이트에서는 글 삭제가 불가능합니다.\n\n글을 삭제하려면:\n1. 로컬에서 posts/ 디렉토리에서 해당 파일 삭제\n2. npm run build 실행\n3. GitHub에 커밋 및 푸시\n4. Cloudflare Pages가 자동으로 재배포');
+    return;
+    
     if (!confirm('정말로 이 글을 삭제하시겠습니까?')) {
         return;
     }
@@ -152,7 +158,7 @@ async function loadPosts() {
     const postsList = document.getElementById('adminPostsList');
     
     try {
-        const response = await fetch('/api/posts');
+        const response = await fetch('/api/posts.json');
         if (!response.ok) {
             throw new Error('글 목록을 불러올 수 없습니다.');
         }

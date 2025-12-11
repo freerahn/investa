@@ -3,7 +3,7 @@ async function loadPosts() {
     const postsList = document.getElementById('postsList');
     
     try {
-        const response = await fetch('/api/posts');
+        const response = await fetch('/api/posts.json');
         if (!response.ok) {
             throw new Error('글 목록을 불러올 수 없습니다.');
         }

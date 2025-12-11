@@ -17,7 +17,7 @@ async function loadPost() {
     }
     
     try {
-        const response = await fetch(`/api/posts/${postId}`);
+        const response = await fetch(`/api/posts/${postId}.json`);
         if (!response.ok) {
             throw new Error('글을 불러올 수 없습니다.');
         }
@@ -51,7 +51,7 @@ async function loadRecentPosts(currentPostId) {
     const recentPostsList = document.getElementById('recentPostsList');
     
     try {
-        const response = await fetch('/api/posts');
+        const response = await fetch('/api/posts.json');
         if (!response.ok) {
             throw new Error('글 목록을 불러올 수 없습니다.');
         }
