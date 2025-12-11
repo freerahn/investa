@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 보기</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><a href="/">블로그</a></h1>
+            <nav>
+                <a href="/">메인</a>
+                <a href="/admin.html">관리자</a>
+            </nav>
+        </header>
+
+        <main class="post-main">
+            <article class="post-content">
+                <div id="postContainer">
+                    <div class="loading">글을 불러오는 중...</div>
+                </div>
+            </article>
+
+            <aside class="recent-posts-sidebar" id="recentPostsSidebar">
+                <h3>최신 글</h3>
+                <div id="recentPostsList" class="recent-posts-list">
+                    <div class="loading">글을 불러오는 중...</div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="js/post.js"></script>
+</body>
+</html>
+

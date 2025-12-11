@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 - 관리자</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>블로그 관리</h1>
+            <nav>
+                <a href="/">메인</a>
+                <a href="/admin.html">관리자</a>
+            </nav>
+        </header>
+
+        <main class="admin-main">
+            <div class="admin-section">
+                <h2 id="formTitle">새 글 작성</h2>
+                
+                <form id="postForm">
+                    <input type="hidden" id="postId">
+                    
+                    <div class="form-group">
+                        <label for="postTitle">제목</label>
+                        <input type="text" id="postTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postContent">내용 (Markdown)</label>
+                        <textarea id="postContent" rows="15" required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn">작성</button>
+                        <button type="button" id="cancelBtn" style="display: none;" onclick="resetForm()">취소</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="admin-section">
+                <h2>글 관리</h2>
+                <div id="adminPostsList" class="admin-posts-list">
+                    <div class="loading">글을 불러오는 중...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+
