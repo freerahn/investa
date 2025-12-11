@@ -1,2 +1,4 @@
-/*    /index.html   200
+/api/posts.json    /api/posts.json   200
+/api/posts/*.json  /api/posts/:splat.json   200
+/*                /index.html   200
 
